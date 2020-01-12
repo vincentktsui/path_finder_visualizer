@@ -6,10 +6,10 @@ class Game
 
     end
 end
-$PROGRAM_NAME == 
+
 if __FILE__ == $PROGRAM_NAME
     
-    board = Board.new(30, 40)
+    board = Board.new(35, 35)
     # p board.render
     end_point = board.rand_pos
     algo = BFS.new(board, end_point)

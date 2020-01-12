@@ -50,6 +50,18 @@ class Board
                 when :B
                     el = "  "
                     el.to_s.colorize(:background => :light_blue)
+                when :Y
+                    el = "  "
+                    el.to_s.colorize(:background => :yellow)
+                when :G
+                    el = "  "
+                    el.to_s.colorize(:background => :green)
+                when :M
+                    el = "  "
+                    el.to_s.colorize(:background => :magenta)
+                when :C
+                    el = "  "
+                    el.to_s.colorize(:background => :cyan)
                 end
             }
             puts colored.join("")

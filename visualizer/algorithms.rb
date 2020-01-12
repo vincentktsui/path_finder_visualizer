@@ -1,6 +1,10 @@
 require 'colorize'
 require "byebug"
 class BFS
+    # include Tiles
+
+    COLORS = [:G, :Y, :B, :C, :M]
+
     attr_reader :end_point, :board, :travel_path, :parent_node
 
     def initialize(board, end_point)
@@ -13,12 +17,23 @@ class BFS
 
     def breadth_first_search(end_point)
         queue = [@parent_node]
-        new_node = @parent_node
         # debugger
+        length = board.rows[0].length
+        height = board.rows.length
+        new_node = @parent_node
+        i = 0
         until queue.empty? || new_node.pos == end_point
             new_node = queue.shift
+            x = new_node.pos.first
+            y = new_node.pos.last
             children = new_node.children
-            change_tiles(children, :B)
+            if (x == 0 || y == 0 )
+                COLORS.rotate! 
+                i += 1
+            elsif i == 3
+                i = 0
+            end
+              change_tiles(children, COLORS[0])
             render_cur
             children.each do |child|
                 return child if child.pos == end_point
@@ -47,8 +62,26 @@ class BFS
     end
 
     def render_cur
+        # system("clear")
         system("clear")
         board.render
+        # echo "output"
         sleep(0.005)
     end
 end
+
+# module Tiles
+
+#     def change_tiles(children, color)
+#         children.each do |child|
+#         child.change_color(color) if child.color != :R
+#         end
+#     end
+
+
+#     def render_cur
+#         system("clear")
+#         board.render
+#         sleep(0.005)
+#     end
+# end
