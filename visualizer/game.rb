@@ -1,4 +1,4 @@
-require_relative 'algorithms'
+require './algorithms/bfs.rb'
 require_relative 'board'
 
 class Game
@@ -8,7 +8,6 @@ class Game
 end
 
 if __FILE__ == $PROGRAM_NAME
-    
     board = Board.new(35, 35)
     # p board.render
     end_point = board.rand_pos

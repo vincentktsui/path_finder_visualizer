@@ -1,5 +1,5 @@
 require_relative 'treetile'
-require_relative 'algorithms'
+require './algorithms/bfs.rb'
 require "colorize"
 require 'set'
 

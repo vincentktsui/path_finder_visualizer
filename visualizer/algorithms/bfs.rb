@@ -1,7 +1,10 @@
+require_relative "tiles_module"
 require 'colorize'
 require "byebug"
+
+
 class BFS
-    # include Tiles
+    include Tiles
 
     COLORS = [:G, :Y, :B, :C, :M]
 
@@ -55,33 +58,8 @@ class BFS
         @travel_path
     end
 
-    def change_tiles(children, color)
-        children.each do |child|
-        child.change_color(color) if child.color != :R
-        end
-    end
-
-    def render_cur
-        # system("clear")
-        system("clear")
-        board.render
-        # echo "output"
-        sleep(0.005)
-    end
 end
 
-# module Tiles
-
-#     def change_tiles(children, color)
-#         children.each do |child|
-#         child.change_color(color) if child.color != :R
-#         end
-#     end
 
 
-#     def render_cur
-#         system("clear")
-#         board.render
-#         sleep(0.005)
-#     end
-# end
+
