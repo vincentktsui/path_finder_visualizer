@@ -1,5 +1,5 @@
-require './algorithms/bfs.rb'
-require_relative 'board'
+require './board/algorithms/bfs.rb'
+require './board/board.rb'
 
 class Game
     def initialize
