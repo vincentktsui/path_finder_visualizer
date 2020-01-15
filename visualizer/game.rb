@@ -8,6 +8,13 @@ class Game
     end
 end
 
+# The way to run the game is to run 'ruby game.rb'
+# The end goal is to have a path finder visualizer website
+# Along with a sudoku algorithm visualizer
+# And a chess AI visualizer
+
+# Convert all the code to javascript come 2 before March. 
+
 if __FILE__ == $PROGRAM_NAME
     board = Board.new(35, 35)
     # p board.render

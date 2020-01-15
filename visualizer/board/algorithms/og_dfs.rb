@@ -2,6 +2,11 @@ require_relative "tiles_module"
 require 'colorize'
 require "byebug"
 
+
+#DFS is not working optimally right now, and i need to organize more of the structure.
+
+
+
 class DFS
     include Tiles
 
