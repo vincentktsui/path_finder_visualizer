@@ -100,6 +100,8 @@ class Board
         self[rand_position]
     end
 
+
+    #This is specific for BFS and DFS
     def create_tree(start_tile)
         queue = [start_tile]
         visited.add(start_tile.pos)

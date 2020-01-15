@@ -2,6 +2,9 @@ require_relative "tiles_module"
 require 'colorize'
 require "byebug"
 
+#BFS works directly with the tree instance variable inside the Board class
+#be aware that the board will establish all types of traversal before any algorithm
+#is called.
 
 class BFS
     include Tiles
