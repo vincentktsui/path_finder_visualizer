@@ -1,16 +1,3 @@
-require './tiles_module.rb'
-require 'byebug'
-
-class SwarmOptimization
-
-    
-
-    def initialize(board, end_point, start_point)
-      @board = board
-      @end_point = end_point
-      @start_point = start_point
-    end
-
     def objective_function(vector)
       return vector.inject(0.0) {|sum, x| sum +  (x ** 2.0)}
     end
@@ -72,7 +59,6 @@ class SwarmOptimization
     end
 
     def search(max_gens, search_space, vel_space, pop_size, max_vel, c1, c2)
-      # debugger
       pop = Array.new(pop_size) {create_particle(search_space, vel_space)}
       gbest = get_global_best(pop)
       max_gens.times do |gen|
@@ -88,28 +74,17 @@ class SwarmOptimization
       return gbest
     end
 
-  
-end
-
 if __FILE__ == $0
   # problem configuration
   problem_size = 2
-  search_space = Array.new(problem_size) {|i| [-5, 5]}
+  search_space = Array.new(problem_size) {|i| [-100, 100]}
   # algorithm configuration
-  vel_space = Array.new(problem_size) {|i| [-1, 1]}
-  max_gens = 100
+  vel_space = Array.new(problem_size) {|i| [-20, 20]}
+  max_gens = 10000
   pop_size = 50
-  max_vel = 100.0
+  max_vel = 10
   c1, c2 = 2.0, 2.0
   # execute the algorithm
-  best = search(max_gens, search_space, vel_space, pop_size, max_vel, c1, c2)
+  best = search(max_gens, search_space, vel_space, pop_size, max_vel, c1,c2)
   puts "done! Solution: f=#{best[:cost]}, s=#{best[:position].inspect}"
 end
-#
-#
-#
-#
-#
-#
-#
-#
